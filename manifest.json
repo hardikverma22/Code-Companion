@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "CodeCompanion",
+    "version": "1.0.0",
+    "description": "AI-powered coding assistant for LeetCode problem solving",
+    "permissions": [
+      "storage",
+      "activeTab"
+    ],
+    "host_permissions": [
+      "https://leetcode.com/*"
+    ],
+    "action": {
+      "default_popup": "index.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://leetcode.com/problems/*"],
+        "js": ["src/Content.tsx"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["index.html"],
+        "matches": ["https://leetcode.com/*"]
+      }
+    ],
+    "background": {
+      "service_worker": "src/background.js"
+    }
+  }
