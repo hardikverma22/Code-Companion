@@ -1,7 +1,8 @@
-# LeetCodeGPT 🧠🚀
+# Code-Companion 🧠🚀
 
 ## Overview
-LeetCodeGPT is a powerful Chrome extension that transforms your LeetCode problem-solving experience by providing intelligent, AI-powered assistance right on the problem page.
+Code-Companion is a powerful Chrome extension that transforms your LeetCode problem-solving experience by providing intelligent, AI-powered assistance right on the problem page.
+![Animation](https://github.com/user-attachments/assets/5216635c-dc47-4681-ba5d-dfe99d3e49ad)
 
 ## Features
 - 🔑 Simple OpenAI API Key configuration
