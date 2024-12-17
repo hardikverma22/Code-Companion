@@ -56,7 +56,16 @@ const ChatBubble = () => {
       LIMIT_VALUE,
       0
     );
-    setChatHistory(allChatHistory || []);
+    if (!allChatHistory || allChatHistory.length === 0) {
+      setChatHistory([
+        {
+          role: "assistant",
+          content: `Hello! I'm here to help you solve the "${problemName}" problem. Feel free to ask me about the problem, request hints, or seek code explanation.`,
+        },
+      ]);
+      return;
+    }
+    setChatHistory(allChatHistory);
 
     // setTotalMessages(totalMessageCount)
     // setChatHistory(chatHistory);
@@ -282,7 +291,7 @@ const ChatBubble = () => {
           </div>
 
           {/* Input Area */}
-          <div className="flex p-4 border-t">
+          <div className="flex p-4 border-t gap-1">
             <input
               type="text"
               disabled={!openAiApiKey || isResponseLoading}
@@ -292,7 +301,7 @@ const ChatBubble = () => {
               placeholder="Ask about the LeetCode problem..."
               className="flex-grow p-2 
               border rounded-l-lg 
-              focus:outline-none focus:ring-2 focus:ring-blue-500
+              focus:outline-none focus:ring-1 focus:ring-blue-500
               disabled:bg-slate-300"
               ref={inputFieldRef}
             />

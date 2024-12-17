@@ -68,9 +68,9 @@ function App() {
   }, [isEditing]);
 
   return (
-    <div className="bg-gray-900 flex items-center justify-center">
+    <div className="bg-gray-900 flex items-center justify-center w-96">
       <div className="w-full bg-gray-800 rounded-xl shadow-xl p-8">
-        <div className="flex items-center gap-3 mb-6">
+        <div className="flex items-center gap-3 mb-6 justify-center flex-col">
           <Code2 className="w-8 h-8 text-indigo-400" />
           <h1 className="text-2xl font-bold text-white">Code Companion</h1>
         </div>
@@ -108,21 +108,23 @@ function App() {
                 >
                   Enter OpenAI API Key
                 </label>
-                <div className="relative flex justify-end items-center ">
+                <div className="relative flex justify-between items-center gap-1">
                   <input
-                    id="apiKey"
+                    id="hs-toggle-password"
                     type={showPassword ? "text" : "password"}
                     value={apiKey}
                     onChange={(e) => setApiKey(e.target.value)}
                     placeholder="sk-..."
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                    className="py-3 ps-4 pe-10 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                   />
                   <button
                     type="button"
-                    className={`absolute right-3 ${!apiKey && "hidden"}`}
                     onClick={handlePasswordVisibility}
+                    className={`${
+                      !apiKey && "hidden"
+                    } absolute inset-y-0 end-0 flex items-center z-20 px-3 cursor-pointer text-gray-400 rounded-e-md focus:outline-none focus:text-blue-600 dark:text-neutral-600 dark:focus:text-blue-500`}
                   >
-                    <Eye className="h-4 w-4  text-white" />
+                    <Eye className="h-4 w-4" />
                   </button>
                 </div>
               </div>
