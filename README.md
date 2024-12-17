@@ -1,50 +1,63 @@
-# React + TypeScript + Vite
+# LeetCodeGPT 🧠🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+LeetCodeGPT is a powerful Chrome extension that transforms your LeetCode problem-solving experience by providing intelligent, AI-powered assistance right on the problem page.
 
-Currently, two official plugins are available:
+## Features
+- 🔑 Simple OpenAI API Key configuration
+- 💡 Contextual problem-solving hints
+- 🤖 AI-generated code solutions
+- 📝 Detailed problem explanation and feedback
+- 💾 Local chat history storage
+- 🌐 Seamless integration with LeetCode interface
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
+- run either of the below command which will generate dist folder, choose dist folder while unpacking in chrome extension in developer mode.
+  ```
+  pnpm run build
+  ```
+  ```
+  npm run build
+  ```
+  
+### Prerequisites
+- Google Chrome Browser
+- OpenAI API Key
 
-## Expanding the ESLint configuration
+### Steps
+1. Clone the repository
+2. Open Chrome and navigate to `chrome://extensions/`
+3. Enable "Developer mode"
+4. Click "Load unpacked" and select the dist directory
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Configuration
+1. Click on the extension icon
+2. Enter your OpenAI API Key
 
-- Configure the top-level `parserOptions` property like this:
+## Usage
+- Navigate to any LeetCode problem page
+- Click the AI Assistant bubble at the bottom right
+- Receive hints, explanations, and solutions
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Technologies
+- JavaScript
+- Chrome Extension API
+- OpenAI API
+- IndexedDB for local storage
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Privacy & Security
+- API Key is stored locally in Chrome storage
+- No external data transmission except OpenAI API calls
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Limitations
+- Requires active OpenAI API Key
+- Solution quality depends on OpenAI model capabilities
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Contributing
+Contributions are welcome! Please read our contributing guidelines before submitting a pull request.
+
+## License
+[MIT]
+
+## Disclaimer
+This project is not affiliated with LeetCode or OpenAI. Use responsibly and respect coding challenge guidelines.
